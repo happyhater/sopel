@@ -4,6 +4,7 @@ COVID-19 Stats
 
 Author: ZmEu (zmeu@whitehat.ro)
 Date: Tue Apr  7 22:02:26 UTC 2020
+Donate: 1zmeu5BeWBprWyPv5ntNZKR7uThXaG9ic (BTC)
 
 v0.1 - First version
 v0.2 - Fix lowercase on country
