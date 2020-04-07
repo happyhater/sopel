@@ -3,13 +3,17 @@
 COVID-19 Stats
 
 Author: ZmEu (zmeu@whitehat.ro)
+Date: Tue Apr  7 22:02:26 UTC 2020
 
 v0.1 - First version
 v0.2 - Fix lowercase on country
 v0.3 - Added function spam as auto trigger per channel
+v0.4 - Added short name in country: ro
+
 
 https://whitehat.ro
 """
+
 from __future__ import unicode_literals, absolute_import, print_function, division
 import requests
 from sopel.module import commands
@@ -30,7 +34,10 @@ def spam(chan, bot):
 @commands("covid")
 def covid(bot, trigger):
 	country = trigger.group(2)
-	if not country: country = "world"
+	if not country:
+		country = "world"
+	elif country == "ro":
+		country = "romania"
 	try:
 		response = requests.get("https://whitehat.ro/api/covid/?c=" + country.replace(" ", "_").lower(), verify=True)
 		if response.json()["country"].replace(" ", "_").lower() == country.replace(" ", "_").lower(): pass
